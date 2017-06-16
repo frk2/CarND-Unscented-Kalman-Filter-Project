@@ -1,18 +1,17 @@
 #ifndef UKF_H
 #define UKF_H
 
-#include "measurement_package.h"
 #include "Eigen/Dense"
-#include <vector>
-#include <string>
+#include "measurement_package.h"
 #include <fstream>
+#include <string>
+#include <vector>
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
 class UKF {
 public:
-
   ///* initially set to false, set to true in first call of ProcessMeasurement
   bool is_initialized_;
 
@@ -53,7 +52,7 @@ public:
   double std_radphi_;
 
   ///* Radar measurement noise standard deviation radius change in m/s
-  double std_radrd_ ;
+  double std_radrd_;
 
   ///* Weights of sigma points
   VectorXd weights_;
@@ -66,7 +65,6 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
-
 
   /**
    * Constructor
